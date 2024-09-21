@@ -1,0 +1,151 @@
+@font-face {
+    font-family: OdinLogoFont;
+    src: url(./Norse-Bold.otf); 
+    /* format('opentype') not needed*/
+}
+
+
+:root {
+    box-sizing: border-box;
+    font-size: calc(6px + 1vh);
+}
+
+body {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.leftContent {
+    position: relative;
+}
+
+.leftContent>img {
+    width: auto;
+    height: 100vh;
+}
+
+.leftContent>.logo {
+    /* Use rgba(with opacity) instead of opacity to prevent inheritance by child divs */
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftContent>.logo>img {
+    width: auto;
+    height: clamp(150px, 22vh, 210px);
+}
+
+.leftContent .logoText{
+    font-family: OdinLogoFont;
+    color: white;
+    font-size: 8rem;
+}
+
+.rightContent {
+/* Flex applies to vertical direction duw to changing flex direction 
+    align-items: stretch will ensute that all children will take up max width
+    instead of setting width to 100%*/
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: rgb(223, 222, 222);
+    gap: 5vh;
+}
+
+.rightContent>.header {
+    font-size: 1.3rem;
+    font-weight: bold;
+    max-width: 500px;
+    margin-left: 30px;
+}
+.rightContent .headertext1{
+    margin-bottom: 3vh;
+}
+
+.rightContent .form{
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.rightContent form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.rightContent .form .text{
+    margin-bottom: 10px;
+    font: bold 1.3rem sans-serif;
+}
+.rightContent .form label {
+    font: small-caps 0.9rem sans-serif;
+}
+.rightContent .form .container{
+    display: flex;
+    gap: 60px;
+}
+.rightContent .form fieldset{
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.rightContent .form input{
+    width: 200px;
+    outline: none;
+    border-radius: 3px;
+}
+/* .container is added to make this selector higher specificity 
+    so as to overwrite :valid/:invalid selectors */
+.rightContent .form .container input:focus{
+    border: solid 2px rgb(54, 150, 230);
+}
+.rightContent .form form .container input:focus+.textBelow::after{
+    content: "";
+}
+
+.rightContent .form input:valid{
+    border: solid 2px rgb(12, 139, 12);
+}
+.rightContent .form input:invalid{
+    border: solid 2px red;
+}
+.rightContent .form input:invalid:required+.textBelow::after{
+    content: "This field is required";
+    color: red;
+}
+.rightContent .submitBtn{
+    padding-left: 30px;
+}
+.rightContent .submitBtn button{
+    font: bold 1.2rem sans-serif;
+    padding: 10px 30px;
+    background-color:#596D48;
+    color: white;
+    border-radius: 6px;
+    border: none;
+
+}
+.rightContent .footer{
+    padding-left: 30px;
+    font: 1.2em sans-serif;
+}
+.rightContent .footer a{
+    text-decoration: none;
+}

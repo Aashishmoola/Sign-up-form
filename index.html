@@ -4,56 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aashish's Sign-up-form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="logic.js" defer></script>
 </head>
 <body>
     <div class="leftContent">
-        <div class="bgImg">
-            <img src="" alt="">
-        </div>
+        <img src="./bgForest.jpg" alt="Background Image With Forest and Leaves">
         <div class="logo">
-            <img src="" alt="">
+            <img src="./odin-lined.png" alt="ODIN logo">
+            <div class="logoText">odin</div>
         </div>
     </div>
     <div class="rightContent">
         <div class="header">
-            <div class="headertext1">This is a form for merely testing purposes no information is being recorded in the client side</div>
-            <div class="headertext2">Never give up on your dreams despite how bleak and uncertain life might be</div>
+            <div class="headertext1">This is a form for merely testing purposes no information is being recorded in the client side.</div>
+            <div class="headertext2">Never give up on your dreams despite how bleak and uncertain life might be.</div>
         </div>
         <div class="form">
+            <div class="text">Lets Do This!</div>
             <form action="" method="post" id="formControl">
-                <div class="container1 firstName">
-                    <label for="firstNameId"></label>
-                    <input type="text" name="firstName" id="firstNameId">
+                <div class="container name">
+                    <fieldset>
+                        <label for="firstNameId">FIRST NAME*</label>
+                        <input type="text" name="firstName" id="firstNameId" required>
+                        <div class="textBelow"></div>
+                    </fieldset>
+                    <fieldset>
+                        <label for="lastNameId">LAST NAME</label>
+                        <input type="text" name="lastName" id="lastnameId">
+                        <div class="textBelow"></div>
+                    </fieldset>
                 </div>
-                <div class="container2 lastName">
-                    <label for="lastNameId"></label>
-                    <input type="text" name="lastName" id="lastnameId">
+                <div class="container details">
+                    <fieldset>
+                        <label for="emailId">EMAIL*</label>
+                        <input type="email" name="email" id="emailId"  placeholder="example@mail.com" required>
+                        <div class="textBelow"></div>
+                    </fieldset>
+                    <fieldset>
+                        <label for="phoneNumberId">PHONE NUMBER</label>
+                        <input type="tel" name="phoneNumber" id="phoneNumberId" placeholder="0000 0000" pattern="\d{4}( )?\d{4}">
+                        <div class="textBelow"></div>
+                    </fieldset>
                 </div>
-                <div class="container3 email">
-                    <label for="emailId"></label>
-                    <input type="email" name="email" id="emailId">
-                </div>
-                <div class="container4 phoneNumber">
-                    <label for="phoneNumberId"></label>
-                    <input type="tel" name="phoneNumber" id="phoneNumberId">
-                </div>
-                <div class="container5 password">
-                    <label for="passwordId"></label>
-                    <input type="password" name="password" id="passwordId">
-                </div>
-                <div class="container6 confirmPassword">
-                    <label for="confirmPasswordId"></label>
-                    <input type="password" name="confirmPassword" id="confirmPasswordId">
+                <div class="container password">
+                    <fieldset>
+                        <label for="passwordId">PASSWORD*</label>
+                        <input type="password" name="password" id="passwordId" required>
+                        <div class="textBelow"></div>
+                    </fieldset>
+                    <fieldset>
+                        <label for="confirmPasswordId">CONFIRM PASSWORD*</label>
+                        <input type="password" name="confirmPassword" id="confirmPasswordId" required>
+                        <div class="textBelow"></div>
+                    </fieldset>
                 </div>
 
             </form>        
         </div>
-        <div class="submitBtn"></div>
-        <button type="submit" form="formControl">Create Account</button>
+        <div class="submitBtn">
+            <button type="submit" form="formControl">Create Account</button>
+        </div>
         <div class="footer">
             <div class="footertext">
-                Already have an account
-                <a href="http://google.com.sg">Log in</a>
+                Already have an account?
+                <a href="http://google.com.sg" target="_blank" rel="noreferrer noopener">Log in</a>
             </div>
         </div>
     </div>
